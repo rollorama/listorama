@@ -1,0 +1,7 @@
+{
+  "name": "listorama",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,28 @@
+main{--background:var(--tot-purple);}
+.tot-input {
+  border: 1px solid #ddd;
+  background-color: white;
+  opacity: 1;
+  margin: 0.1rem 0 0.2 0;
+  font-size: 1rem;
+  color:black;
+}
+
+.tot-label {
+  color: #666;
+  font-size: 0.66rem;
+}
+
+.tot-login {
+  background-color: #fafafa;
+  padding: 1rem;
+  border: 1px solid lightgrey;
+}
+
+.margin-top-01{
+  margin-top:1rem;
+}
+.errmsg{
+  font-size:smaller;
+  color:red;
+}

@@ -1,0 +1,27 @@
+.key{
+  text-decoration: underline mediumpurple;
+  text-underline-offset: 0.1rem;
+}
+
+.tot-header{
+  --background:var(--tot-grey);
+}
+ion-list, .list-md{
+  padding:0;
+  margin:0;
+}
+.tot-center{
+  align-text:center;
+  vertical-align:center;
+}
+.tot-hide{
+  display:none;
+}
+ion-icon {
+  pointer-events: none;
+
+}
+.spacy{
+  margin:0 1rem;
+}
+

@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col>
+        <ion-title *ngIf="swOK">{{mc.data.tablesDef.title}}</ion-title>
+      </ion-col>
+      <ion-col>
+        <ion-button size="small"
+                    tappable (click)="new()">
+          New
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="swOK">
+    <!--=== header ======================================================================-->
+    <ion-item class="tot-header">
+      <ion-col *ngFor="let fld of mc.data.tablesDef.fields"
+               [size]=fld.size
+               [ngClass]="{'tot-hide':fld.size==0}">
+        {{fld.label}}
+      </ion-col>
+    </ion-item>
+    <!--===============================================================================-->
+    <ion-item *ngFor="let item of mc.data.db[mc.data.tablesDef.className]">
+      <ion-col *ngFor="let fld of mc.data.tablesDef.fields; let i01 = index;"
+               [ngClass]="{'key': i01==0, 'tot-hide':fld.size==0}"
+               [size]=fld.size
+               tappable (click)="update(item)">
+        {{item[fld.name]}}
+      </ion-col>
+      <span title="Records">
+      <ion-button class="spacy"
+                  size="default"
+                  fill="clear"
+                  tappable (click)="records(item)">
+          <ion-icon name="list-outline"></ion-icon>
+      </ion-button>
+                 </span>
+      <span title="Structure">
+      <ion-button class="spacy"
+                  size="default"
+                  fill="clear"
+                  tappable (click)="structure(item)">
+          <ion-icon name="grid-outline"></ion-icon>
+      </ion-button>
+                  </span>
+      <span title="Delete">
+      <ion-button class="spacy"
+                  size="default"
+                  fill="clear"
+                  color="danger"
+                  tappable (click)="delete(item)">
+          <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+      </span>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+
+
+
+

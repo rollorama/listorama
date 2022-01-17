@@ -1,0 +1,44 @@
+.key{
+  text-decoration: underline mediumpurple;
+  text-underline-offset: 0.1rem;
+}
+
+.tot-header{
+  --background:var(--tot-grey);
+}
+ion-list, .list-md{
+  padding:0;
+  margin:0;
+}
+.tot-label {
+  color: #777;
+}
+
+.tot-header-purple {
+  --background: var(--tot-purple);
+  --color: white;
+}
+
+.tot-header-green {
+  --background: var(--tot-green);
+  --color: white;
+}
+
+.tot-button-clear {
+  --color: white;
+}
+
+.tot-button-clear:hover {
+  --background: white;
+  --color: var(--tot-purple);
+}
+
+.tot-hide {
+  display: none;
+}
+ion-icon {
+  pointer-events: none;
+}
+.spacy{
+  margin:0 1rem;
+}

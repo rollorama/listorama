@@ -1,0 +1,17 @@
+.tot-label{
+  color:#777;
+}
+.tot-header-purple{
+  --background:var(--tot-purple);
+  --color:white;
+}
+.tot-button-clear{
+  --color:white;
+}
+.tot-button-clear:hover{
+  --background:white;
+  --color:var(--tot-purple);
+}
+.tot-hide{
+  display:none!important;
+}

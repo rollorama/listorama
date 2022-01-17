@@ -1,0 +1,16 @@
+[
+  {
+    "name": "cityName",
+    "type": "text",
+    "label": "City Name",
+    "size": "2",
+    "dbType": "text"
+  },
+  {
+    "name": "countryCode",
+    "type": "text",
+    "label": "Country Code",
+    "size": "2",
+    "dbType": "text"
+  }
+]

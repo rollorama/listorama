@@ -1,0 +1,34 @@
+<ion-content style="top:20%;">
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="3" class="errmsg">{{mc.data.msg}}</ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="3" class="tot-login" >
+          <ion-label class="tot-label" position="">Email</ion-label>
+          <ion-input class="tot-input" type="email" [(ngModel)]="username"></ion-input>
+          <ion-label class="tot-label" position="">Password</ion-label>
+          <ion-input class="tot-input" type="password" [(ngModel)]="password"></ion-input>
+        <ion-row class="margin-top-01">
+          <ion-col></ion-col>
+          <ion-col>
+            <ion-button (click)="signup()">
+              SIGN UP
+            </ion-button>
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <ion-button color="secondary" (click)="login()">
+              SIGN IN
+            </ion-button>
+          </ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
