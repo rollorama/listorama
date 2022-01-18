@@ -46,9 +46,9 @@
   Should the need arise, you can override repository-level definitions of a field within a specific strucutre.</br>
 
   The following rules can be defined:</br>
-  * Validation - define specific values that can be stored in the field using standard predicates such as EQ, NE, LIKE, IN and so on</br>
+  * Validation - define specific values that can be stored in the field using standard predicates such as EQ, NE, LIKE, IN</br>
   * Required - define if a field is mandatory
-  * Parent table - define if a field's values can only be values that reside in a Reference table
+  * Parent table - define if a field's values must exist in a reference table key
   * Derivation - define how a value of a field is to be derived
   * Function - define an external function/service which can be used to validate or populate a field
   * Trigger - define an external function/service which can be triggered when a field value is changed
