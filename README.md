@@ -4,30 +4,31 @@
 ## The Basics</br>
 
 * **Tables**</br>
-  The main page of *Listorama* displays a list of the data tables that we can work with.</br>
-  To create a new data table, click on the New button, and assign a unique name - for example: **cities**.</br>
+  The main page of *Listorama* displays a list of data tables that we can work with.</br>
+  To create a new data table, all we need to do is click on the *New Table* button and assign a unique name to the table, for example: **cities**.</br>
+  The new table now appears in the Tables list.</br>
   Each table comes with a number of optional fields that can be updated, such as **Table Description**.</br>
-  There are also some informational fields that are updated automatically, such as **Table creation date**.</br>
+  To update these fields, click on the table name - a window containing table-level fields is displayed for editing.</br>
+  There are also some informational fields displayed, such as **Table creation date**. These are updated automatically.</br>
 
-* **Fields**</br>
-  Fields are defined and stored in a repository.</br>
-  A table structure (fields) is defined by assigning fields from the repository to the table.</br>
-  Using fields from a repository enhances consistency throughout your application, and encourages the re-use of field-level data rules.</br>
-  Should the need arise, you can override certain repository-level definitions of a field within a specific strucutre.</br>
+* **Structures**</br>
+  Our next step is to populate our table with data. To do so, we need to define the format of fields - or data structure - of the table.</br>
+  By default, each table is created with a **key** (*id*) and **value** (*description*) field.</br>
+  If all we need is a simple key-value reference table, we can start populating the table with data, by clicking on the *Records* option.</br>
   
-  Fields can be defined to the repository in a seperate process, either manually, or via an API or upload, and can also be</br>
-  defined as part of the table structure definition process. When defining a structure, you can search the repository for the field you would like to assign,</br>
-  and if it does not exist in the repository, you define it, and it is automatically added to the repository and assigned to the table structure.</br>
+  If we need to define more fields to the table data structure, we click on the *Structure* option in the table row.</br>
+  Defined table fields are stored in a central data field repository.</br>
+  All we need to do is search the repository and assign an existing field to the table.</br>
+  If we need to define a new field, we click on the *New field* button, and define the field name and other field attributes.<br>
+  The new field is then stored in the repository, and assigned to the table structure.</br>
+  
+  Fields can also be defined to the repository in a seperate process - either manually, or via upload or API.</br>
 
 * **Records**</br>
-  In order to populate a table with data (records or rows), we need to know the data structure (fields) of that table.</br>
-  By default, each table is created with a **key** (*id*) and **value** (*description*) field.</br>
-  If we need a simple key-value reference table, we can start populating the table with data.</br>
-  
-  If we need to define more fields to the table, we click on the *Structure* option in the row that represents our table.</br>
-  Table fields can be added or deleted at any time.</br>
-  Each table structure will also have some informational fields that are updated automatically, such as **Record creation date**.</br>
-
+  After we have defined our table and strucutre, we can populate the table with data by clicking on the *Records* option.<br>
+  The next page will display all the records that have been added to the table.</br>
+  When we click on the *Edit* option, a window containing the record fields is displayed for editing.</br>
+  Each record will also have some informational fields that are updated automatically, such as **Record creation date**.</br>
 
   
 * **Data Rules**</br>
@@ -36,6 +37,8 @@
   At the Table level you can define functions/services that will be invoked when a record is accessed, added, changed or deleted.</br>
   
   Field-level data rules are defined at the field level definition and will be employed whenever the field is being populated with a value.</br>
+    Should the need arise, you can override repository-level definitions of a field, within a specific strucutre.</br>
+
   The following rules can be defined:</br>
   * Validation - define only those specific values that can be stored in the field (using standard predicates: EQ,NE,GT,LT,GE,LE,LIKE,IN,BETWEEN)</br>
   * Required - define if a field is mandatory
