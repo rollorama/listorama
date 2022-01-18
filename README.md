@@ -69,14 +69,13 @@ The client application has been developed with Google's Angular framework, and i
 The data tables are stored on Google's Firebase Realtime Database, a cloud-hosted database synchronized in realtime to every connected client.</br>
 
 In the client code we refer to the components of data management as Tables/Records/Fields.</br>
-This is a simplistic analogy to Tables/Rows/Columns used in SQL, or Collections/Documents/Fields in NoSQL,</br>
-as well as Data Classes/Objects/Attributes in other data models.</br>
+This is a simplistic analogy to Tables/Rows/Columns used in SQL, or Collections/Documents/Fields in NoSQL.</br>
 
 ## App
 You can see *Listorama* in action at https://www.listorama.me
 
 ## Authors
-The project was started by Dov Keshet, Batel Mirel and Esther Kaptsan in January 2022.
+The project was initiated by Dov Keshet, Batel Mirel and Esther Kaptsan in January 2022.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
