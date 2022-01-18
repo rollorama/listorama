@@ -5,22 +5,23 @@
 
 * **Tables**</br>
   The main page of *Listorama* displays a list of data tables that we can work with.</br>
-  To create a new data table, click on the *New Table* button, and assign a unique name to the table. For example, **cities**.</br>
+  To create a new data table, we click on the *New Table* button, and assign a unique name to the table. For example, **cities**.</br>
   The new table now appears in the Tables list.</br>
   Each table comes with a number of optional fields that can be updated, such as **Table Description**.</br>
-  To update these fields, click on the table name. A window containing table-level fields is displayed for editing.</br>
+  To update these fields, we click on the table name. A window containing table-level fields is displayed for editing.</br>
   There are also some informational fields displayed, such as **Table creation date**. These are updated automatically.</br>
 
 * **Structures**</br>
   Our next step is to populate our table with data records.</br>
-  To do so, we need to define the format of fields - or data structure - of the table.</br>
+  To do so, we need to define the format of fields, or *data structure*, of the table.</br>
   
   By default, each table is created with a **key** (*id*) and **value** (*description*) field.</br>
-  If all we need is a simple key-value reference table, we can start populating the table with data by clicking on the *Records* option.</br>
+  If all we need is a simple key-value reference table, we can start populating the table with data.</br>
+  To do so, click on the *Records* option in the table row.</br>
   
-  If we need to define more fields to the table data structure, we click on the *Structure* option in the table row.</br>
-  Defined table fields are stored in a central data field repository.</br>
-  All we need to do is search the repository and assign an existing field to the table.</br>
+  If we need to define more fields to the table data structure, click on the *Structure* option in the table row.</br>
+  Defined table fields are stored in a central data field repository, so all we need to do is search the repository,</br>
+  and assign an existing field to the table.</br>
   
   If we need to define a new field that does not exist in the repository, click on the *New field* button.</br>
   After defining the field name and other attributes, the new field is stored in the repository, and assigned to the table structure.</br>
@@ -28,12 +29,13 @@
   Fields can also be defined to the repository in a seperate process - either manually, or via upload or API.</br>
 
 * **Records**</br>
-  After we have defined our table and strucutre, we can populate the table with data by clicking on the *Records* option.<br>
-  The Records page will display all the records that exist in the table.</br>
-  When we click on the *Edit* option, a window containing the record fields is displayed for editing.</br>
+  After we have defined our table and strucutre, we can populate the table with data.<br>
+  To do so, click on the *Records* option in the table row.<br>
+  The Records page will display the records that exist in the table.</br>
+  When we click on the *Edit* option in the record row, a window containing the record field values will be displayed for editing.</br>
+  We will be able to edit all the fields that were defined in the table data structure.</br>
   Each record will also have some informational fields that are updated automatically, such as **Record creation date**.</br>
-  We can also delete records by clicking on the *Delete* option.
-
+  We can also delete records by clicking on the *Delete* option in the record row.
   
 * **Data Rules**</br>
   In order to ensure data integrity, data rules can be defined at both the *Table* and *Field* definitions.</br>
@@ -73,7 +75,7 @@ as well as Data Classes/Objects/Attributes in other data models.</br>
 You can see *Listorama* in action at https://www.listorama.me
 
 ## Authors
-The project was started by Dov Keshet, Esther Kaptsan and Batel Mirel on January 1, 2022.
+The project was started by Dov Keshet, Batel Mirel and Esther Kaptsan in January 2022.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
