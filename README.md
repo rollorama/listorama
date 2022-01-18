@@ -1,5 +1,5 @@
 # Listorama <img src="/listorama.png" alt="Listorama" style="height:75px; width:75px;"/>
-*Listorama* is an open source project with the goal of enabling simple definition and management of reference data tables.</br>
+An open source project with the goal of enabling simple definition and management of reference data tables.</br>
 
 ## The Basics</br>
 
