@@ -12,7 +12,8 @@
   There are also some informational fields displayed, such as **Table creation date**. These are updated automatically.</br>
 
 * **Structures**</br>
-  Our next step is to populate our table with data. To do so, we need to define the format of fields - or data structure - of the table.</br>
+  Our next step is to populate our table with data (records, or rows).</br>
+  To do so, we need to define the format of fields - or data structure - of the table.</br>
   By default, each table is created with a **key** (*id*) and **value** (*description*) field.</br>
   If all we need is a simple key-value reference table, we can start populating the table with data, by clicking on the *Records* option.</br>
   
