@@ -5,12 +5,9 @@ import {rejects} from 'assert';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 
-
-
 import {firebaseConfig} from '../../../assets/data/const'
 import {mc} from './mc';
 import {Router} from '@angular/router';
-
 
 @Injectable()
 export class db {
@@ -38,14 +35,15 @@ export class db {
 // PARSE DB FUNCTIONS
 //====================================================
   getAll() {
+    this.mc.data.swOK = false
     return new Promise<void>(resolve => {
       if (this.mc.data.db[this.mc.data.dbParms.className]){
-        console.log('in if')
+        this.mc.data.swOK=true
         resolve()
       }else{
         this.afdb.list(this.mc.data.dbParms.className).valueChanges().subscribe(items=>{
           this.mc.data.db[this.mc.data.dbParms.className] = items
-          console.log(items)
+          this.mc.data.swOK = true
           resolve()
         })
       }
@@ -89,29 +87,21 @@ export class db {
   }
 
   save(): Promise<void> {
+    this.mc.data.swOK = false
     return new Promise<void>(resolve => {
-      console.log('in save')
       let path = this.mc.data.dbParms.className + '/' +  this.mc.data.objInd
       let ref = this.afdb.object(path);
-      console.log(path)
-      console.log(this.mc.data.obj)
-
-
-// set() for destructive updates
       ref.set(this.mc.data.obj);
-        // let dataClass = Parse.Object.extend(this.mc.data.dbParms.className);
-      // let obj = new dataClass();
-      // obj.save(this.mc.data.dbParms.obj, {}).then((res) => {
-      //   console.clear()
         resolve()
       })
-   // })
   }
 
-  delete(obj): Promise<any> {
+  delete(): Promise<any> {
+    this.mc.data.swOK = false
     return new Promise<void>(resolve => {
-      // obj.destroy({}).then((res) => {
-      //   console.clear()
+      let path = this.mc.data.dbParms.className + '/' +  this.mc.data.objInd
+      let ref = this.afdb.object(path);
+      ref.set(null);
         resolve()
       })
    // })

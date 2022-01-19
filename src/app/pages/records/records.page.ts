@@ -15,7 +15,6 @@ import {mc} from '../../components/services/mc';
 export class RecordsPage implements OnInit {
   public NEW = 0
   public UPDATE = 1
-  public swOK:boolean=false
 
   constructor(
     public modalController: ModalController,
@@ -31,27 +30,22 @@ export class RecordsPage implements OnInit {
   }
 
   load() {
-    //console.log(this.mc.data.recordsDef)
-    let start = Math.floor(Date.now())
     this.mc.data.dbParms = {
       className: this.mc.data.recordsDef.className
     }
     this.db.getAll().then(() => {
-      let end = Math.floor(Date.now())
-      let dur = end - start
-        // console.log(this.mc.data.db[this.mc.data.dbParms.className])
-      this.swOK=true
     })
   }
 
   new() {
-    this.mc.data.header = this.mc.data.recordsDef.headers[this.NEW]
+    this.mc.data.header = 'ADD'
     this.mc.data.obj = null
+    this.mc.data.objInd = this.mc.data.db[this.mc.data.dbParms.className].length
     this.fields()
   }
 
   update(item,i) {
-     this.mc.data.header = this.mc.data.recordsDef.headers[this.UPDATE]
+     this.mc.data.header = 'UPDATE'
      this.mc.data.obj = item
      this.mc.data.objInd = i
      this.fields()
@@ -65,9 +59,9 @@ export class RecordsPage implements OnInit {
     return await modal.present();
   }
 
-  delete(item) {
-    this.db.delete(item).then(() => {
+  delete(ind) {
+    this.mc.data.objInd = ind
+    this.db.delete().then(() => {
     })
   }
-
 }

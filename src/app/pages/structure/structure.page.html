@@ -2,7 +2,7 @@
   <ion-toolbar class="tot-header-green">
     <ion-row>
       <ion-col size="6">
-        <ion-title *ngIf="swOK">{{mc.data.structureDef.title}}</ion-title>
+        <ion-title *ngIf="mc.data.swOK">{{mc.data.structureDef.title}}</ion-title>
       </ion-col>
       <ion-col>
         <ion-button class="tot-button-clear" size="small" fill="clear" (click)="new()">New</ion-button>
@@ -16,20 +16,22 @@
     </ion-row>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
-  <ion-list  *ngIf="swOK">
+  <ion-grid>
+  <ion-list  *ngIf="mc.data.swOK">
     <!--=== header ======================================================================-->
     <ion-item class="tot-header">
       <ion-col *ngFor="let fld of mc.data.structureDef.fields"
                [size]=fld.size
-               [ngClass]="{'tot-hide':fld.size==0}">
+               [ngClass]="{'tot-hide':fld.hide}">
         {{fld.label}}
       </ion-col>
     </ion-item>
     <!--===============================================================================-->
     <ion-item *ngFor="let val of mc.data.fieldsDef.fields">
       <ion-col *ngFor="let fld of mc.data.structureDef.fields; let i01 = index;"
-               [ngClass]="{'key': i01==0, 'tot-hide':fld.size==0}"
+               [ngClass]="{'key': i01==0, 'tot-hide':fld.hide}"
                [size]=fld.size
                tappable (click)="update(val)">
         {{val[fld.name]}}
@@ -45,4 +47,5 @@
                   </span>
     </ion-item>
   </ion-list>
+  </ion-grid>
 </ion-content>

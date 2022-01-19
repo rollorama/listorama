@@ -13,7 +13,6 @@ import {mc} from '../../components/services/mc';
 export class StructurePage implements OnInit {
   public NEW = 0
   public UPDATE = 1
-  public swOK:boolean=false
 
   constructor(
     public modalController: ModalController,
@@ -22,7 +21,7 @@ export class StructurePage implements OnInit {
   }
 
   ngOnInit() {
-    this.swOK=true
+    this.mc.data.swOK=true
   }
 
   ionViewDidEnter() {

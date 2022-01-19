@@ -15,7 +15,6 @@ import {mc} from '../../components/services/mc';
 export class TablesPage implements OnInit {
   public NEW = 0
   public UPDATE = 1
-  public swOK:boolean=false
   public fieldsArr:Array<any>=[]
 
   constructor(
@@ -33,16 +32,10 @@ export class TablesPage implements OnInit {
   }
 
   load() {
-
-    let start = Math.floor(Date.now())
     this.mc.data.dbParms = {
       className: this.mc.data.tablesDef.className
     }
     this.db.getAll().then(() => {
-      let end = Math.floor(Date.now())
-      let dur = end - start
-      this.swOK=true
-
     })
   }
 
@@ -53,9 +46,10 @@ export class TablesPage implements OnInit {
     this.fields()
   }
 
-  update(item) {
+  update(item,i) {
     this.mc.data.header = this.mc.data.tablesDef.headers[this.UPDATE]
     this.mc.data.obj = item
+    this.mc.data.objInd = i
     this.fields()
   }
 
@@ -67,8 +61,9 @@ export class TablesPage implements OnInit {
     return await modal.present();
   }
 
-  delete(item) { // delete this record from tables
-    this.db.delete(item).then(() => {
+  delete(ind) { // delete this record from tables
+    this.mc.data.objInd = ind
+    this.db.delete().then(() => {
 
     })
   }
@@ -89,13 +84,6 @@ export class TablesPage implements OnInit {
 
   childDef(item){
       this.mc.data.currentClass = item.name
-      // let str = item.fields
-      // let arr = str.split('|')
-      // let len = arr.length
-      // this.fieldsArr = []
-      // for (let i = 0; i < len; i++) {
-      //   this.fieldsArr.push(JSON.parse(arr[i]))
-      // }
       this.mc.data.childDef = {
         className: this.mc.data.currentClass,
         public: true,

@@ -16,14 +16,14 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row *ngFor="let fld of mc.data.fieldsDef.fields; let i01 = index">
-      <ion-item [ngClass]="{'tot-hide':fld.size==0}">
+    <ion-row *ngFor="let fld of fields; let i01 = index">
+      <ion-item [ngClass]="{'tot-hide':fld.hide}">
         <ion-label class="tot-label"
                    position="floating">
           {{fld.label}}
         </ion-label>
         <ion-input [type]=fld.type
-                   [(ngModel)]=this.mc.data.db[this.mc.data.dbParms.className][this.mc.data.objInd][fld.name]>
+                   [(ngModel)]=fld.value>
         </ion-input>
       </ion-item>
     </ion-row>

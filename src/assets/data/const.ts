@@ -16,9 +16,9 @@ export var appConfig = {
     title: 'Tables',
     headers: ['Define a new Table', 'Update Table'],
     fields: [
-      {name: 'name', type: 'text', label: 'Table Name', size: 2, dbType: 'text'},
-      {name: 'description', type: 'text', label: 'Table Description', size: 3, dbType: 'text'},
-      {name: 'fields', type: 'text', label: 'Fields', size: 0, dbType: 'Array'},
+      {name: 'name', type: 'text', label: 'Table Name', size: 2, dbType: 'text', hide:false, protect:false, key:true},
+      {name: 'description', type: 'text', label: 'Table Description', size: 3, dbType: 'text', hide:false, protect:false, key:false},
+      {name: 'fields', type: 'text', label: 'Fields', size: 0, dbType: 'Array', hide:true, protect:false, key:false},
     ]
   },
   structureDef: {
@@ -26,12 +26,15 @@ export var appConfig = {
     public: true,
     title: 'Structure',
     fields: [
-      {name: 'tableName', type: 'text', label: 'Table Name', size: 0, dbType: 'text'},
-      {name: 'name', type: 'text', label: 'Name', size: 3, dbType: 'text'},
-      {name: 'type', type: 'text', label: 'Type', size: 3, dbType: 'text'},
-      {name: 'label', type: 'text', label: 'Text', size: 3, dbType: 'text'},
-      {name: 'size', type: 'text', label: 'Size', size: 2, dbType: 'text'},
-      {name: 'dbType', type: 'text', label: 'DB type', size: 0, dbType: 'text'},
+      {name: 'tableName', type: 'text', label: 'Table Name', size: 2, dbType: 'text', hide:true, protect:false, key:true},
+      {name: 'name', type: 'text', label: 'Name', size: 3, dbType: 'text', hide:false, protect:false, key:true},
+      {name: 'type', type: 'text', label: 'Type', size: 3, dbType: 'text', hide:false, protect:false, key:false},
+      {name: 'label', type: 'text', label: 'Text', size: 3, dbType: 'text', hide:false, protect:false, key:false},
+      {name: 'size', type: 'text', label: 'Size', size: 2, dbType: 'text', hide:false, protect:false, key:false},
+      {name: 'dbType', type: 'text', label: 'DB type', size: 2, dbType: 'text', hide:true, protect:false, key:false},
+      {name: 'hide', type: 'boolean', label: 'Hide field', size: 1, dbType: 'boolean', hide:true, protect:false, key:false},
+      {name: 'protect', type: 'boolean', label: 'Protect field', size: 1, dbType: 'boolean', hide:true, protect:false, key:false},
+      {name: 'key', type: 'boolean', label: 'Key field', size: 1, dbType: 'boolean', hide:true, protect:false, key:false},
     ]
   }
 }

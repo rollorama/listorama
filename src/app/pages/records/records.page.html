@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-row>
       <ion-col>
-        <ion-title *ngIf="swOK">{{mc.data.recordsDef.title}}</ion-title>
+        <ion-title *ngIf="mc.data.swOK">{{mc.data.recordsDef.title}}</ion-title>
       </ion-col>
       <ion-col>
         <ion-button size="small"
@@ -18,21 +18,22 @@
 </ion-header>
 
 <ion-content>
-  <ion-list  *ngIf="swOK">
+  <ion-grid>
+  <ion-list  *ngIf="mc.data.swOK">
     <!--=== header ======================================================================-->
     <ion-item class="tot-header">
       <ion-col *ngFor="let fld of mc.data.recordsDef.fields"
                [size]=fld.size
-               [ngClass]="{'tot-hide':fld.size==0}">
+               [ngClass]="{'tot-hide':fld.hide}">
         {{fld.label}}
       </ion-col>
     </ion-item>
     <!--===============================================================================-->
-    <ion-item *ngFor="let item of mc.data.db[mc.data.recordsDef.className];  let i01 = index;">
-      <ion-col *ngFor="let fld of mc.data.recordsDef.fields; let ind = index;"
-               [ngClass]="{'key': ind==0, 'tot-hide':fld.size==0}"
+    <ion-item *ngFor="let item of mc.data.db[mc.data.recordsDef.className];  let ind = index;">
+      <ion-col *ngFor="let fld of mc.data.recordsDef.fields; let i01 = index;"
+               [ngClass]="{'key': i01==0, 'tot-hide':fld.hide==true}"
                [size]=fld.size
-               tappable (click)="update(item,i01)">
+               tappable (click)="update(item,ind)">
         {{item[fld.name]}}
 		      </ion-col>
       <span title="Delete">
@@ -40,10 +41,11 @@
                     size="default"
                     fill="clear"
                     color="danger"
-                    tappable (click)="delete(item)">
+                    tappable (click)="delete(ind)">
           <ion-icon name="trash-outline"></ion-icon>
         </ion-button>
         </span>
     </ion-item>
   </ion-list>
+  </ion-grid>
 </ion-content>

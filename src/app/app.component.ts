@@ -24,12 +24,7 @@ export class AppComponent {
     public router: Router,
     public db: db,
     public mc: mc) {
-    // this.db.getDB()
-    if (window.location.hostname=='localhost'){
-      this.mc.data.server=1
-    }else{
-      this.mc.data.server=0
-    }
+
     this.mc.data.currentClass='tables'
     this.mc.data.tablesDef=appConfig.tablesDef
     this.mc.data.structureDef=appConfig.structureDef
