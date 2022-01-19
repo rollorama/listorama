@@ -43,6 +43,7 @@ An open source project with the goal of enabling simple definition and managemen
   In order to ensure data integrity, data rules can be defined at both the *Table* and *Field* definitions.</br>
   
   * At the Table level you can define functions/services that will be invoked when a record is accessed, added, changed or deleted.</br>
+    You can also define Parent-Child relationships between tables, such as the *Countries* (Parent) and *Cities* (Child).
   
   * Field-level data rules are defined at the field level definition and will be employed whenever the field is being populated with a value.</br>
     Should the need arise, you can override repository-level definitions of a field within a specific strucutre.</br>
