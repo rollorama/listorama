@@ -19,24 +19,24 @@
 
 <ion-content>
   <ion-grid>
-  <ion-list *ngIf="mc.data.swOK">
-    <!--=== header ======================================================================-->
-    <ion-item class="tot-header">
-      <ion-col *ngFor="let fld of mc.data.tablesDef.fields"
-               [size]=fld.size
-               [ngClass]="{'tot-hide':fld.hide}">
-        {{fld.label}}
-      </ion-col>
-    </ion-item>
-    <!--===============================================================================-->
-    <ion-item *ngFor="let item of mc.data.db[mc.data.tablesDef.className]; let ind = index;">
-      <ion-col *ngFor="let fld of mc.data.tablesDef.fields; let i01 = index;"
-               [ngClass]="{'key': i01==0, 'tot-hide':fld.hide}"
-               [size]=fld.size
-               tappable (click)="update(item,ind)">
-        {{item[fld.name]}}
-      </ion-col>
-      <span title="Records">
+    <ion-list *ngIf="mc.data.swOK">
+      <!--=== header ======================================================================-->
+      <ion-item class="tot-header">
+        <ion-col *ngFor="let fld of mc.data.tablesDef.fields"
+                 [size]=fld.size
+                 [ngClass]="{'tot-hide':fld.hide}">
+          {{fld.label}}
+        </ion-col>
+      </ion-item>
+      <!--===============================================================================-->
+      <ion-item *ngFor="let item of mc.data.db[mc.data.tablesDef.className]; let ind = index;">
+        <ion-col *ngFor="let fld of mc.data.tablesDef.fields; let i01 = index;"
+                 [ngClass]="{'key': i01==0, 'tot-hide':fld.hide}"
+                 [size]=fld.size
+                 tappable (click)="update(item,ind)">
+          {{item[fld.name]}}
+        </ion-col>
+        <span title="Records">
       <ion-button class="spacy"
                   size="default"
                   fill="clear"
@@ -44,7 +44,7 @@
           <ion-icon name="list-outline"></ion-icon>
       </ion-button>
                  </span>
-      <span title="Structure">
+        <span title="Structure">
       <ion-button class="spacy"
                   size="default"
                   fill="clear"
@@ -52,7 +52,7 @@
           <ion-icon name="grid-outline"></ion-icon>
       </ion-button>
                   </span>
-      <span title="Delete">
+        <span title="Delete">
       <ion-button class="spacy"
                   size="default"
                   fill="clear"
@@ -61,8 +61,8 @@
           <ion-icon name="trash-outline"></ion-icon>
       </ion-button>
       </span>
-    </ion-item>
-  </ion-list>
+      </ion-item>
+    </ion-list>
   </ion-grid>
 </ion-content>
 

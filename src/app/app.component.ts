@@ -25,9 +25,9 @@ export class AppComponent {
     public db: db,
     public mc: mc) {
 
-    this.mc.data.currentClass='tables'
-    this.mc.data.tablesDef=appConfig.tablesDef
-    this.mc.data.structureDef=appConfig.structureDef
+    this.mc.data.currentClass = 'tables'
+    this.mc.data.tablesDef = appConfig.tablesDef
+    this.mc.data.structureDef = appConfig.structureDef
 
     this.db.init().then(() => {
 

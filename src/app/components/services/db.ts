@@ -1,13 +1,15 @@
 import {Injectable, NgZone} from '@angular/core';
+import {Router} from '@angular/router';
+
 import {promise} from 'protractor';
 import {resolve} from '@angular/compiler-cli';
 import {rejects} from 'assert';
+
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-
 import {firebaseConfig} from '../../../assets/data/const'
+
 import {mc} from './mc';
-import {Router} from '@angular/router';
 
 @Injectable()
 export class db {
@@ -19,20 +21,12 @@ export class db {
     public afdb: AngularFireDatabase,
     public router: Router,
     public mc: mc,
-    public zone: NgZone
-  ) {
+    public zone: NgZone ) {
 
-  }
-
-  getDB(){
-    let path = "tables"
-    this.afdb.list(path).valueChanges().subscribe(tables=>{
-      console.log(tables)
-    })
   }
 
 //====================================================
-// PARSE DB FUNCTIONS
+// DB FUNCTIONS
 //====================================================
   getAll() {
     this.mc.data.swOK = false
@@ -47,41 +41,6 @@ export class db {
           resolve()
         })
       }
-
-     //  if (this.mc.data.db[this.mc.data.dbParms.className]) {
-     //    //console.log('getting ' + this.mc.data.dbParms.className + ' from cache')
-     //   resolve()
-     // } else {
-     //    this.mc.data.db[this.mc.data.dbParms.className] = []
-     //    // console.log('getting ' + this.mc.data.dbParms.className + ' from database')
-     //    let dataClass = Parse.Object.extend(this.mc.data.dbParms.className);
-     //    let query = new Parse.Query(dataClass);
-     //    query.find({}).then((data) => {
-     //      let len = data.length;
-     //      for (let i = 0; i < len; i++) {
-     //        this.mc.data.db[this.mc.data.dbParms.className].push(data[i])
-     //      }
-     //    })
-     //    // console.log(this.mc.data.db[this.mc.data.dbParms.className])
-     //    let sub = this.client.subscribe(query)
-     //    sub.on('update', (obj) => {
-     //      // console.log('===update===')
-     //    })
-     //    sub.on('create', (obj) => {
-     //      // console.log('===create===')
-     //      this.mc.data.db[this.mc.data.dbParms.className].push(obj)
-     //    })
-     //    sub.on('delete', (obj) => {
-     //      // console.log('===delete===')
-     //      let len = this.mc.data.db[this.mc.data.dbParms.className].length;
-     //      for (let i = 0; i < len; i++) {
-     //        if (this.mc.data.db[this.mc.data.dbParms.className][i].id == obj.id) {
-     //          this.mc.data.db[this.mc.data.dbParms.className].splice(i, 1);
-     //          break;
-     //        }
-     //      }
-     //    })
-     //  }
       resolve()
     })
   }
@@ -104,7 +63,6 @@ export class db {
       ref.set(null);
         resolve()
       })
-   // })
   }
 
 //====================================================
@@ -167,34 +125,6 @@ export class db {
       //   .catch((err) => {
       //     resolve()
       //   })
-      resolve()
-    })
-  }
-
-//====================================================
-// PARSE INITIALIZATION FUNCTIONS
-//====================================================
-  initParse() {
-    return new Promise<void>(resolve => {
-      //Parse.initialize(appConfig.appId[this.mc.data.server], appConfig.javascriptKey[this.mc.data.server])
-      resolve()
-    })
-  }
-
-  initParseServer() {
-    return new Promise<void>(resolve => {
-      //Parse.serverURL = appConfig.serverURL[this.mc.data.server]
-      resolve()
-    })
-  }
-
-  initParseLiveQuery() {
-    return new Promise<void>(resolve => {
-      // this.client = new Parse.LiveQueryClient({
-      //   applicationId: appConfig.appId[this.mc.data.server],
-      //   serverURL: appConfig.liveQueryURL[this.mc.data.server],
-      //   javascriptKey: appConfig.javascriptKey[this.mc.data.server]
-      // })
       resolve()
     })
   }

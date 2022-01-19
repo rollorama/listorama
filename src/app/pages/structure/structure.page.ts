@@ -21,7 +21,7 @@ export class StructurePage implements OnInit {
   }
 
   ngOnInit() {
-    this.mc.data.swOK=true
+    this.mc.data.swOK = true
   }
 
   ionViewDidEnter() {
@@ -35,12 +35,15 @@ export class StructurePage implements OnInit {
   new() {
 
   }
+
   save() {
 
   }
+
   close() {
     this.modalController.dismiss();
   }
+
   delete(item) {
 
   }

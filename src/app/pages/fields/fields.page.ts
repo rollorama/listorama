@@ -16,7 +16,7 @@ export class FieldsPage implements OnInit {
   public fields = []
   public Record: {}
 
-    constructor(public modalController: ModalController,
+  constructor(public modalController: ModalController,
               public db: db,
               public mc: mc) {
   }
@@ -41,23 +41,24 @@ export class FieldsPage implements OnInit {
   }
 
   save(fld) {
-    this.mc.data.obj  = this.buildObj()
+    this.mc.data.obj = this.buildObj()
     this.db.save().then(() => {
       this.close()
     })
+  }
+
+  buildObj() {
+    let obj = {}
+    let len = this.fields.length
+    for (let i = 0; i < len; i++) {
+      let fld = this.fields[i]
+      obj[fld.name] = fld.value
+    }
+    return obj
   }
 
   close() {
     this.modalController.dismiss();
   }
 
-  buildObj(){
-     let obj = {}
-     let len = this.fields.length
-     for (let i = 0; i < len; i++) {
-       let fld = this.fields[i]
-       obj[fld.name] = fld.value
-     }
-     return obj
-  }
 }

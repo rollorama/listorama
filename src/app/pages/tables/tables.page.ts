@@ -15,7 +15,7 @@ import {mc} from '../../components/services/mc';
 export class TablesPage implements OnInit {
   public NEW = 0
   public UPDATE = 1
-  public fieldsArr:Array<any>=[]
+  public fieldsArr: Array<any> = []
 
   constructor(
     public modalController: ModalController,
@@ -46,7 +46,7 @@ export class TablesPage implements OnInit {
     this.fields()
   }
 
-  update(item,i) {
+  update(item, i) {
     this.mc.data.header = this.mc.data.tablesDef.headers[this.UPDATE]
     this.mc.data.obj = item
     this.mc.data.objInd = i
@@ -70,26 +70,26 @@ export class TablesPage implements OnInit {
 
   async structure(item) { // go to structure of chosen table
     this.childDef(item)
-      this.mc.data.fieldsDef=this.mc.data.childDef
+    this.mc.data.fieldsDef = this.mc.data.childDef
     console.log(this.mc.data.fieldsDef)
-      let modal = await this.modalController.create({component: StructurePage, cssClass:'wide-modal'});
-      return await modal.present();
+    let modal = await this.modalController.create({component: StructurePage, cssClass: 'wide-modal'});
+    return await modal.present();
   }
 
   records(item) {
     this.childDef(item)
-      this.mc.data.recordsDef = this.mc.data.childDef
-      this.router.navigate(['records']);
+    this.mc.data.recordsDef = this.mc.data.childDef
+    this.router.navigate(['records']);
   }
 
-  childDef(item){
-      this.mc.data.currentClass = item.name
-      this.mc.data.childDef = {
-        className: this.mc.data.currentClass,
-        public: true,
-        title: item.description,
-        headers: ['New', 'Update'],
-        fields: item.fields
-      }
-   }
+  childDef(item) {
+    this.mc.data.currentClass = item.name
+    this.mc.data.childDef = {
+      className: this.mc.data.currentClass,
+      public: true,
+      title: item.description,
+      headers: ['New', 'Update'],
+      fields: item.fields
+    }
+  }
 }

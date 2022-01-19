@@ -44,11 +44,11 @@ export class RecordsPage implements OnInit {
     this.fields()
   }
 
-  update(item,i) {
-     this.mc.data.header = 'UPDATE'
-     this.mc.data.obj = item
-     this.mc.data.objInd = i
-     this.fields()
+  update(item, i) {
+    this.mc.data.header = 'UPDATE'
+    this.mc.data.obj = item
+    this.mc.data.objInd = i
+    this.fields()
   }
 
   async fields() {
